@@ -289,14 +289,39 @@ tl7
 .to("#silk span",{
   opacity:1,
   stagger:0.1,
-  delay:0.05
+  delay:1
 },"a")
-document.querySelector("#create").addEventListener("mousemove", function () {
- tl7.play()
+
+document.querySelector("#create").addEventListener("mouseenter", function () {
+
+gsap.to("#plain span",{
+  opacity:0,
+  stagger:0.1
 })
+
+gsap.to("#silk span",{
+  opacity:1,
+  stagger:0.1,
+  delay:0.5
+})
+
+})
+
 document.querySelector("#create").addEventListener("mouseleave", function () {
-  tl7.reverse()
-})
+
+  gsap.to("#silk span",{
+    opacity:0,
+    stagger:0.1
+  })
+  
+  gsap.to("#plain span",{
+    opacity:1,
+    stagger:0.1,
+    delay:0.5
+  })
+  
+  })
+
 
 
 
